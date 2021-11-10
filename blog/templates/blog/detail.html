@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+      <!-- Modal -->
+      <div class="modal fade lug" id="myModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Change</h4>
+               </div>
+               <div class="modal-body">
+                  <ul>
+                     <li><a href="#"><img src="images/flag-up-1.png" alt="" /> United States</a></li>
+                     <li><a href="#"><img src="images/flag-up-2.png" alt="" /> France </a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="main-template-about">
+         <div class="section-gradient">
+            <div class="map"></div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                     <div class="wow fadeIn" data-wow-delay="0.0s">
+                        <h1 style="text-align: center;">{{blog.title}}</h1>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="section do">
+            <div class="blue-light"></div>
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2">
+                     <div class="does-box">
+                        <div class="panel-body" dir="rtl">
+                           <p style="line-height: 2.8em;">
+                              {{blog.content}}
+                           </p>
+                        </div>
+                        <img class="wow fadeIn" src="images/mac-about.png" alt="" />
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        
+{% endblock content %}

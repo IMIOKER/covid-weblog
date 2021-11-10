@@ -1,0 +1,87 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+      <nav style="background-color:#1e96ff ;">
+         <ul style="display: flex; justify-content: center; padding: 10px;">
+            <h4 style="color: white; opacity: 60%;">created by : iman ghahrshekan</h4>
+         </ul>
+      </nav>
+      <!-- Modal -->
+
+      <div class="page-content-product">
+         <div class="main-product">
+            <div class="container">
+               <div class="row clearfix">
+                  <div class="find-box">
+                     <h1>راهنمای جامع مقابله با کرونا</h1>
+                     <h4 style="opacity: 50%;">جهت کسب اطلاعات ، روی هر مقاله کلیک کنید</h4>
+               </div>
+               <div class="row clearfix">
+                  {% for blog in blogs %}
+                  <div class="col-lg-3 col-sm-6 col-md-3">
+                     <a href="{% url 'det' blog.id %}">
+                        <div class="box-img">
+                           <h4>{{blog.title}}</h4>
+                           <img style="width: 200px; height: 200px;" src="{{blog.image.url}}" alt="">
+                        </div>
+                     </a>
+                  </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="cat-main-box">
+         <div class="modal fade lug" id="myModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">×</button>
+                  <h4 class="modal-title">Change</h4>
+               </div>
+               <div class="modal-body">
+                  <ul>
+                     <li><a href="#"><img src="{% static 'images/flag-up-1.png' %}" alt=""> United States</a></li>
+                     <li><a href="#"><img src="{% static 'images/flag-up-2.png' %}" alt=""> France </a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div><div class="container">
+            <div class="row panel-row">
+               <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.0s" style="visibility: visible; animation-delay: 0s; animation-name: fadeIn;">
+                  <div class="panel panel-default">
+                     <div class="panel-body">
+                        <img src="{% static 'images/xpann-icon.jpg' %}" class="icon-small" alt="">
+                        <h4>آمار به روز</h4>
+                        <p dir="rtl">آمار هایی که در این وبسایت ارائه شده اند تماما بروز هستند !
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                  <div class="panel panel-default">
+                     <div class="panel-body">
+                        <img src="{% static 'images/create-icon.jpg' %}" class="icon-small" alt="">
+                        <h4>منابع تحقیقاتی معتبر</h4>
+                        <p dir="rtl">منبع تمامی مقالات این وبسایت از سازمان بهداشت جهانی و منابع معتبر است .
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6 wow fadeIn hidden-sm" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                  <div class="panel panel-default">
+                     <div class="panel-body">
+                        <img src="{% static 'images/get-icon.jpg' %}" class="icon-small" alt="">
+                        <h4>پاسخگوی سوالات شما</h4>
+                        <p dir="rtl">می توانید از طریق ایمیل iman.ghahrshekan@gmail.com با ما در ارتباط باشید.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+{% endblock content %}
